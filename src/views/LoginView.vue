@@ -14,7 +14,7 @@ const form = reactive({
 })
 const loading = ref(false)
 const errorMessage = ref('')
-const successMessage = computed(() => route.query.registered === '1' ? '注册成功，请登录' : '')
+const successMessage = computed(() => (route.query.registered === '1' ? '注册成功，请登录' : ''))
 
 async function submitLogin() {
   errorMessage.value = ''
@@ -52,8 +52,8 @@ async function submitLogin() {
     <section class="auth-panel" aria-labelledby="login-title">
       <div class="auth-heading">
         <p class="eyebrow">Welcome back</p>
-        <h1 id="login-title">登录博客</h1>
-        <p>使用你的用户名和密码进入博客管理区。</p>
+        <h1 id="login-title">登录</h1>
+        <p>使用你的用户名和密码进入管理区。</p>
       </div>
 
       <p v-if="successMessage" class="message success-message">{{ successMessage }}</p>

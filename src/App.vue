@@ -14,7 +14,7 @@ async function handleLogout() {
 <template>
   <div class="app-shell">
     <header class="site-header">
-      <RouterLink class="brand" to="/">个人博客</RouterLink>
+      <RouterLink class="brand" to="/">Blog</RouterLink>
 
       <nav class="site-nav" aria-label="主导航">
         <RouterLink to="/">首页</RouterLink>

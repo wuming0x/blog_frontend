@@ -54,10 +54,14 @@ onMounted(() => loadArticles())
         <div>
           <p class="eyebrow">Latest Articles</p>
           <h1>文章列表</h1>
-          <p class="hero-copy">浏览最新发布的博客文章，点击标题查看完整内容。</p>
+          <!-- <p class="hero-copy">浏览最新发布的博客文章，点击标题查看完整内容。</p> -->
         </div>
 
-        <RouterLink v-if="userStore.isLoggedIn" class="primary-button link-button" to="/articles/new">
+        <RouterLink
+          v-if="userStore.isLoggedIn"
+          class="primary-button link-button"
+          to="/articles/new"
+        >
           发布文章
         </RouterLink>
       </div>
@@ -68,7 +72,11 @@ onMounted(() => loadArticles())
       <div v-else-if="articles.length === 0 && !errorMessage" class="empty-state">
         <h2>暂无文章</h2>
         <p>第一篇文章还在路上。登录后可以发布新的内容。</p>
-        <RouterLink v-if="userStore.isLoggedIn" class="primary-button link-button" to="/articles/new">
+        <RouterLink
+          v-if="userStore.isLoggedIn"
+          class="primary-button link-button"
+          to="/articles/new"
+        >
           发布文章
         </RouterLink>
       </div>
@@ -87,7 +95,12 @@ onMounted(() => loadArticles())
       </div>
 
       <div v-if="totalElements > 0" class="pagination-bar">
-        <button class="secondary-button" :disabled="loading || page <= 0" type="button" @click="loadArticles(page - 1)">
+        <button
+          class="secondary-button"
+          :disabled="loading || page <= 0"
+          type="button"
+          @click="loadArticles(page - 1)"
+        >
           上一页
         </button>
         <span>第 {{ page + 1 }} / {{ Math.max(totalPages, 1) }} 页，共 {{ totalElements }} 篇</span>

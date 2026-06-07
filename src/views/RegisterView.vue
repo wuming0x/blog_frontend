@@ -50,7 +50,7 @@ async function submitRegister() {
       <div class="auth-heading">
         <p class="eyebrow">Create account</p>
         <h1 id="register-title">注册账号</h1>
-        <p>创建一个账号，开始记录和管理你的博客内容。</p>
+        <p>创建一个账号，开始记录和管理你的内容。</p>
       </div>
 
       <p v-if="errorMessage" class="message error-message">{{ errorMessage }}</p>

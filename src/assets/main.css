@@ -429,6 +429,138 @@ h1 {
   white-space: pre-wrap;
 }
 
+.comment-section {
+  margin-top: 40px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+}
+
+.comment-heading,
+.comment-meta,
+.comment-form-actions,
+.comment-login-tip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.comment-heading {
+  margin-bottom: 22px;
+}
+
+.comment-heading h2 {
+  color: var(--text-strong);
+  font-size: 28px;
+  font-weight: 750;
+}
+
+.comment-count {
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.comment-form {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.comment-form label {
+  color: var(--text-strong);
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.comment-form textarea {
+  width: 100%;
+  min-height: 118px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: #ffffff;
+  color: var(--text-strong);
+  outline: none;
+  resize: vertical;
+}
+
+.comment-form textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.14);
+}
+
+.comment-form-actions {
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.comment-login-tip {
+  margin-bottom: 22px;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface-muted);
+  color: var(--text-muted);
+}
+
+.comment-list {
+  display: grid;
+  gap: 14px;
+}
+
+.comment-item {
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.comment-meta {
+  align-items: flex-start;
+}
+
+.comment-meta div {
+  display: grid;
+  gap: 3px;
+}
+
+.comment-meta strong {
+  color: var(--text-strong);
+  font-weight: 750;
+}
+
+.comment-meta span {
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.comment-delete-button {
+  min-height: 32px;
+  padding: 6px 10px;
+  color: var(--danger-text);
+}
+
+.comment-delete-button:hover {
+  background: var(--danger-bg);
+  color: var(--danger-text);
+}
+
+.comment-item p {
+  margin-top: 12px;
+  color: var(--text-strong);
+  line-height: 1.75;
+  white-space: pre-wrap;
+}
+
+.comment-empty {
+  margin-top: 0;
+}
+
+.comment-pagination {
+  margin-top: 18px;
+}
+
 .article-form {
   display: grid;
   gap: 18px;
@@ -515,9 +647,16 @@ h1 {
 
   .section-heading,
   .pagination-bar,
-  .detail-title-row {
+  .detail-title-row,
+  .comment-heading,
+  .comment-form-actions,
+  .comment-login-tip {
     align-items: stretch;
     flex-direction: column;
+  }
+
+  .comment-meta {
+    gap: 10px;
   }
 
   .section-heading h1 {

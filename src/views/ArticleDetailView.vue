@@ -26,14 +26,14 @@ const commentErrorMessage = ref('')
 const commentContent = ref('')
 
 const canManageArticle = computed(() => {
-  return userStore.isLoggedIn && article.value && userStore.user.id === article.value.authorId
+  return userStore.isLoggedIn && article.value && (userStore.isAdmin || userStore.user.id === article.value.authorId)
 })
 
 function canDeleteComment(comment) {
   if (!userStore.isLoggedIn || !article.value) {
     return false
   }
-  return userStore.user.id === comment.authorId || userStore.user.id === article.value.authorId
+  return userStore.isAdmin || userStore.user.id === comment.authorId || userStore.user.id === article.value.authorId
 }
 
 async function loadArticle() {

@@ -20,11 +20,13 @@ function readStoredUser() {
 export const useUserStore = defineStore('user', () => {
   const user = ref(readStoredUser())
   const isLoggedIn = computed(() => Boolean(user.value?.id))
+  const isAdmin = computed(() => user.value?.role === 'ADMIN')
 
   function setUser(nextUser) {
     user.value = {
       id: nextUser.id,
       username: nextUser.username,
+      role: nextUser.role ?? 'USER',
       token: nextUser.token ?? null,
     }
     localStorage.setItem(STORAGE_KEY, JSON.stringify(user.value))
@@ -38,6 +40,7 @@ export const useUserStore = defineStore('user', () => {
   return {
     user,
     isLoggedIn,
+    isAdmin,
     setUser,
     logout,
   }

@@ -19,7 +19,7 @@ const saving = ref(false)
 const errorMessage = ref('')
 
 const canEdit = computed(() => {
-  return userStore.isLoggedIn && article.value && userStore.user.id === article.value.authorId
+  return userStore.isLoggedIn && article.value && (userStore.isAdmin || userStore.user.id === article.value.authorId)
 })
 
 async function loadArticle() {
@@ -85,7 +85,7 @@ onMounted(loadArticle)
         <div>
           <p class="eyebrow">Edit Article</p>
           <h1 id="edit-article-title">编辑文章</h1>
-          <p class="hero-copy">仅文章作者可以修改标题、摘要和正文。</p>
+          <p class="hero-copy">文章作者或管理员可以修改标题、摘要和正文。</p>
         </div>
       </div>
 

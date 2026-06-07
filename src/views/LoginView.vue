@@ -34,8 +34,11 @@ async function submitLogin() {
       username: form.username.trim(),
       password: form.password,
     })
+    if (!user.token) {
+      throw new Error('登录响应缺少 token，请确认后端 JWT 已启用')
+    }
     userStore.setUser(user)
-    await router.push('/')
+    await router.push(typeof route.query.redirect === 'string' ? route.query.redirect : '/')
   } catch (error) {
     errorMessage.value = error.message || '用户名或密码错误'
   } finally {

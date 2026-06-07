@@ -23,6 +23,7 @@ async function handleLogout() {
           <RouterLink to="/register">注册</RouterLink>
         </template>
         <template v-else>
+          <RouterLink to="/articles/new">发布文章</RouterLink>
           <span class="current-user">{{ userStore.user.username }}</span>
           <button class="text-button" type="button" @click="handleLogout">退出</button>
         </template>

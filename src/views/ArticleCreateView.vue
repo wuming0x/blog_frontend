@@ -53,7 +53,7 @@ async function submitArticle() {
         <div>
           <p class="eyebrow">Create Article</p>
           <h1 id="create-article-title">发布文章</h1>
-          <p class="hero-copy">填写标题和正文即可发布。摘要可留空，后端会自动生成。</p>
+          <!-- <p class="hero-copy">填写标题和正文即可发布。摘要可留空，后端会自动生成。</p> -->
         </div>
       </div>
 
@@ -67,12 +67,22 @@ async function submitArticle() {
 
         <label for="article-summary">
           摘要
-          <input id="article-summary" v-model="form.summary" placeholder="可选，留空自动生成" type="text" />
+          <input
+            id="article-summary"
+            v-model="form.summary"
+            placeholder="可选，留空自动生成"
+            type="text"
+          />
         </label>
 
         <label for="article-content">
           正文
-          <textarea id="article-content" v-model="form.content" placeholder="请输入文章正文" rows="12" />
+          <textarea
+            id="article-content"
+            v-model="form.content"
+            placeholder="请输入文章正文"
+            rows="12"
+          />
         </label>
 
         <div class="form-actions">

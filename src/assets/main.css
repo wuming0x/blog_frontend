@@ -106,7 +106,8 @@ a {
 .home-page,
 .auth-page,
 .detail-page,
-.editor-page {
+.editor-page,
+.admin-page {
   display: flex;
   justify-content: center;
   width: min(1120px, calc(100% - 32px));
@@ -300,7 +301,8 @@ h1 {
 
 .article-list-section,
 .article-detail,
-.editor-panel {
+.editor-panel,
+.admin-panel {
   width: 100%;
   padding: 36px;
   border: 1px solid var(--border);
@@ -606,6 +608,72 @@ h1 {
   gap: 12px;
 }
 
+.user-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.user-table {
+  width: 100%;
+  min-width: 820px;
+  border-collapse: collapse;
+}
+
+.user-table th,
+.user-table td {
+  padding: 14px 12px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 14px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.user-table th {
+  color: var(--text-strong);
+  font-weight: 750;
+}
+
+.user-name {
+  color: var(--text-strong);
+  font-weight: 700;
+}
+
+.self-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  margin-left: 8px;
+  padding: 2px 8px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface-muted);
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.role-select {
+  min-width: 112px;
+  min-height: 38px;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: #ffffff;
+  color: var(--text-strong);
+  outline: none;
+}
+
+.role-select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.14);
+}
+
+.user-delete-button {
+  min-height: 38px;
+  padding: 8px 12px;
+}
+
 @media (max-width: 720px) {
   .site-header {
     align-items: flex-start;
@@ -619,7 +687,8 @@ h1 {
   .home-page,
   .auth-page,
   .detail-page,
-  .editor-page {
+  .editor-page,
+  .admin-page {
     padding-top: 28px;
   }
 
@@ -641,7 +710,8 @@ h1 {
 
   .article-list-section,
   .article-detail,
-  .editor-panel {
+  .editor-panel,
+  .admin-panel {
     padding: 24px 18px;
   }
 

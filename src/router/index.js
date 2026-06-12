@@ -41,6 +41,15 @@ const router = createRouter({
         requiresAuth: true,
       },
     },
+    {
+      path: '/admin/users',
+      name: 'admin-users',
+      component: () => import('../views/UserManagementView.vue'),
+      meta: {
+        requiresAuth: true,
+        requiresAdmin: true,
+      },
+    },
   ],
 })
 
@@ -53,6 +62,12 @@ router.beforeEach((to) => {
       query: {
         redirect: to.fullPath,
       },
+    }
+  }
+
+  if (to.meta.requiresAdmin && !userStore.isAdmin) {
+    return {
+      path: '/',
     }
   }
 })
